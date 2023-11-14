@@ -1,0 +1,121 @@
+/* // body */
+
+@use './h-fonts' as F;
+@use './h-colors' as C;
+@use './mixin.scss' as M;
+
+body{
+
+    margin: 0 20rem;
+
+    h1{
+        text-align: center;
+        padding: 1rem 0 0.5rem 0;
+        color: C.$titleColor;
+    } 
+
+    .notes, .notes-list{
+        background-color: C.$notesColor;
+        border-radius: 30px;
+        box-shadow: 1px 1px 15px 2px rgba(149, 148, 148, 0.296);
+        padding: 1.5rem 2rem;
+    }
+
+    .notes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 3rem;
+
+        input, textarea{
+            border: none;
+            background-color: C.$notesColor;
+            padding-bottom: 1rem;
+            font-family: F.$mainFont;
+
+        }
+
+        input{
+            font-size: F.$textMd;
+            font-weight: F.$textBold;
+        }
+        
+        textarea{
+            font-size: F.$textSm;
+            font-weight: F.$textMedium;
+        }
+
+
+        .notes-btns{
+            display: flex;
+            flex-direction: row;   
+            justify-content: center;
+
+             // $fontSize, $fontWeight, $color, $backgroundColor, $borderRadius, $border, $padding : false 
+            button{
+                @include M.Button( F.$textSm, F.$textSemiBold, C.$primaryColor, #FFFCE6, none, 10px, 1px 1px 15px 2px #F2E7B3,0.5rem 0.8rem, 0.5rem 0.5rem);
+            }
+            button:hover{
+                cursor: pointer;
+                color: C.$bgColor;
+                background-color: C.$primaryColor;
+            }
+
+            .cancel-btn{
+                color: C.$bgColor;
+                background-color: C.$redColor;
+            }
+        }
+
+    }
+
+    .notes-list{
+        list-style-type: none;
+        
+        h3{
+            font-family: F.$titlesFont;
+            font-size: 1.5rem;
+        }
+ 
+        p{
+            font-size: F.$textMd;
+            padding-bottom: 1.5rem;
+        }
+
+        .list-btns{
+            display: flex;
+            flex-direction: row;   
+            justify-content: center;
+            padding-bottom: 3rem;
+
+            // $fontSize, $fontWeight, $color, $backgroundColor, $borderRadius, $border, $padding : false, margin:false.
+            button{
+                @include M.Button( 13px, F.$textSemiBold, C.$primaryColor, #FFFCE6, none, 10px, 1px 1px 15px 2px #F2E7B3, 0.5rem 0.8rem, 0 1rem);
+            }
+            button:hover{
+                cursor: pointer;
+                color: C.$bgColor;
+                background-color: C.$primaryColor;
+            }
+            .delete-btn{
+                color: C.$bgColor;
+                background-color: C.$redColor;
+            }
+
+            .fav-btn{
+                font-size: 13px;
+                font-weight: F.$textSemiBold;
+                color: C.$redColor;
+                background-color: C.$notesColor;
+                border: 2px solid C.$redColor;
+                border-radius: 10px;
+                padding: 0.3rem 0.6rem;
+            }
+            .fav-btn:hover{
+                cursor: pointer;
+                color: C.$bgColor;
+                background-color: C.$redColor;
+            }
+        }
+    }
+}  

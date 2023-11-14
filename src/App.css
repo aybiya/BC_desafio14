@@ -1,0 +1,123 @@
+/* // html */
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #454545;
+  margin-top: 1.5rem;
+  place-items: center;
+  background-color: #FFFFFA;
+}
+
+/* // body */
+body {
+  margin: 0 20rem;
+}
+body h1 {
+  text-align: center;
+  padding: 1rem 0 0.5rem 0;
+  color: #262626;
+}
+body .notes, body .notes-list {
+  background-color: #FFEFB7;
+  border-radius: 30px;
+  box-shadow: 1px 1px 15px 2px rgba(149, 148, 148, 0.296);
+  padding: 1.5rem 2rem;
+}
+body .notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+body .notes input, body .notes textarea {
+  border: none;
+  background-color: #FFEFB7;
+  padding-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+body .notes input {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body .notes textarea {
+  font-size: 1rem;
+  font-weight: 500;
+}
+body .notes .notes-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body .notes .notes-btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #454545;
+  background-color: #FFFCE6;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px 2px #F2E7B3;
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem 0.5rem;
+}
+body .notes .notes-btns button:hover {
+  cursor: pointer;
+  color: #FFFFFA;
+  background-color: #454545;
+}
+body .notes .notes-btns .cancel-btn {
+  color: #FFFFFA;
+  background-color: #CC0000;
+}
+body .notes-list {
+  list-style-type: none;
+}
+body .notes-list h3 {
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+}
+body .notes-list p {
+  font-size: 1.2rem;
+  padding-bottom: 1.5rem;
+}
+body .notes-list .list-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+body .notes-list .list-btns button {
+  font-size: 13px;
+  font-weight: 600;
+  color: #454545;
+  background-color: #FFFCE6;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px 2px #F2E7B3;
+  padding: 0.5rem 0.8rem;
+  margin: 0 1rem;
+}
+body .notes-list .list-btns button:hover {
+  cursor: pointer;
+  color: #FFFFFA;
+  background-color: #454545;
+}
+body .notes-list .list-btns .delete-btn {
+  color: #FFFFFA;
+  background-color: #CC0000;
+}
+body .notes-list .list-btns .fav-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #CC0000;
+  background-color: #FFEFB7;
+  border: 2px solid #CC0000;
+  border-radius: 10px;
+  padding: 0.3rem 0.6rem;
+}
+body .notes-list .list-btns .fav-btn:hover {
+  cursor: pointer;
+  color: #FFFFFA;
+  background-color: #CC0000;
+}
