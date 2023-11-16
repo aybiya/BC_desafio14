@@ -6,7 +6,17 @@
 
 body{
 
-    margin: 0 20rem;
+    margin: 0 5rem;
+
+    //Margenes notas BP tablet
+    @include M.medias(tablet){
+        margin: 0 8rem;
+    }
+
+    //Margenes notas BP desktop
+    @include M.medias(desktop){
+        margin: 0 15rem;
+    }
 
     h1{
         text-align: center;
@@ -21,6 +31,7 @@ body{
         padding: 1.5rem 2rem;
     }
 
+    /* // Nota */
     .notes{
         display: flex;
         flex-direction: column;
@@ -35,17 +46,19 @@ body{
 
         }
 
+        // Titulo nota
         input{
             font-size: F.$textMd;
             font-weight: F.$textBold;
         }
         
+        // Texto nota
         textarea{
             font-size: F.$textSm;
             font-weight: F.$textMedium;
         }
 
-
+        // Botón agregar nota
         .notes-btns{
             display: flex;
             flex-direction: row;   
@@ -60,7 +73,7 @@ body{
                 color: C.$bgColor;
                 background-color: C.$primaryColor;
             }
-
+            // Botón de cancelar que aparece cuando se edita una nota
             .cancel-btn{
                 color: C.$bgColor;
                 background-color: C.$redColor;
@@ -69,6 +82,7 @@ body{
 
     }
 
+    /* // Lista de notas */
     .notes-list{
         list-style-type: none;
         
@@ -82,26 +96,38 @@ body{
             padding-bottom: 1.5rem;
         }
 
+        // Botones editar, eliminar y fav de las notas
         .list-btns{
             display: flex;
-            flex-direction: row;   
-            justify-content: center;
+            flex-direction: column;  
+            align-items: center; 
+            justify-content: center;   
             padding-bottom: 3rem;
 
             // $fontSize, $fontWeight, $color, $backgroundColor, $borderRadius, $border, $padding : false, margin:false.
             button{
-                @include M.Button( 13px, F.$textSemiBold, C.$primaryColor, #FFFCE6, none, 10px, 1px 1px 15px 2px #F2E7B3, 0.5rem 0.8rem, 0 1rem);
+                @include M.Button( 13px, F.$textSemiBold, C.$primaryColor, #FFFCE6, none, 10px, 1px 1px 15px 2px #F2E7B3, 0.8rem 1.2rem, 0.5rem 1rem);
+                width: 20%;
+                //Botones lista de notas BP tablet
+                @include M.medias(tablet){
+                    width: 18%;                
+                }
+                //Botones lista de notas BP desktop
+                @include M.medias(desktop){
+                    width: 10%;                
+                }
             }
             button:hover{
                 cursor: pointer;
                 color: C.$bgColor;
                 background-color: C.$primaryColor;
             }
+            //Botón eliminar
             .delete-btn{
                 color: C.$bgColor;
                 background-color: C.$redColor;
             }
-
+            //Botón favorito
             .fav-btn{
                 font-size: 13px;
                 font-weight: F.$textSemiBold;
@@ -109,13 +135,24 @@ body{
                 background-color: C.$notesColor;
                 border: 2px solid C.$redColor;
                 border-radius: 10px;
-                padding: 0.3rem 0.6rem;
+                padding: 0.7rem 0.6rem;
             }
             .fav-btn:hover{
                 cursor: pointer;
                 color: C.$bgColor;
                 background-color: C.$redColor;
             }
+        
+            //BP- Botones lista de notas BP tablet
+            @include M.medias(tablet){
+                flex-direction: row;   
+            }
+
+            //BP- Botones lista de notas BP desktop
+            @include M.medias(desktop){
+                flex-direction: row;         
+            }
         }
     }
 }  
+

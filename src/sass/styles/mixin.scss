@@ -1,6 +1,6 @@
 // Declaraciones globales
 
-// Botón
+// Botones
 @mixin Button ( $fontSize, $fontWeight, $color, $backgroundColor, $border, $borderRadius, $boxShadow : false, $padding : false, $margin : false ) {
     font-size: $fontSize;
     font-weight: $fontWeight;
@@ -17,4 +17,23 @@
     @if $margin{
         margin: $margin;
     };
+}
+
+// Mediaqs
+@mixin medias($breakpoint){
+	@if $breakpoint == mobile{
+		@media (max-width: 767px){
+			@content;
+		}
+	}
+	@if $breakpoint == tablet{
+		@media (min-width: 768px) and (max-width: 1289px){
+			@content;
+		}
+	}
+	@if $breakpoint == desktop{
+		@media (min-width: 1290px){
+			@content;
+		}
+	}
 }

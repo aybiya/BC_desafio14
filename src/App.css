@@ -12,7 +12,19 @@ html {
 
 /* // body */
 body {
-  margin: 0 20rem;
+  margin: 0 5rem;
+  /* // Nota */
+  /* // Lista de notas */
+}
+@media (min-width: 768px) and (max-width: 1289px) {
+  body {
+    margin: 0 8rem;
+  }
+}
+@media (min-width: 1290px) {
+  body {
+    margin: 0 15rem;
+  }
 }
 body h1 {
   text-align: center;
@@ -83,7 +95,8 @@ body .notes-list p {
 }
 body .notes-list .list-btns {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding-bottom: 3rem;
 }
@@ -95,8 +108,19 @@ body .notes-list .list-btns button {
   border: none;
   border-radius: 10px;
   box-shadow: 1px 1px 15px 2px #F2E7B3;
-  padding: 0.5rem 0.8rem;
-  margin: 0 1rem;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem 1rem;
+  width: 20%;
+}
+@media (min-width: 768px) and (max-width: 1289px) {
+  body .notes-list .list-btns button {
+    width: 18%;
+  }
+}
+@media (min-width: 1290px) {
+  body .notes-list .list-btns button {
+    width: 10%;
+  }
 }
 body .notes-list .list-btns button:hover {
   cursor: pointer;
@@ -114,10 +138,20 @@ body .notes-list .list-btns .fav-btn {
   background-color: #FFEFB7;
   border: 2px solid #CC0000;
   border-radius: 10px;
-  padding: 0.3rem 0.6rem;
+  padding: 0.7rem 0.6rem;
 }
 body .notes-list .list-btns .fav-btn:hover {
   cursor: pointer;
   color: #FFFFFA;
   background-color: #CC0000;
+}
+@media (min-width: 768px) and (max-width: 1289px) {
+  body .notes-list .list-btns {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1290px) {
+  body .notes-list .list-btns {
+    flex-direction: row;
+  }
 }

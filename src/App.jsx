@@ -8,7 +8,7 @@ const App = () => {
   const [selectedNote, setSelectedNote] = useState(null);
 
   useEffect(() => {
-    // API de Firebase para obtener las notas
+    //Promesa para tener las notas en la API de Firebase
     fetch('https://desafio14-notas-default-rtdb.firebaseio.com/notas.json')
       .then((response) => response.json())
       .then((data) => {
@@ -20,9 +20,12 @@ const App = () => {
           }));
           setNotes(notesArray);
         }
+      })
+      .catch((error) => {
+        console.error('Error al cargar la nota:', error);
       });
   }, []);
-
+  
   const addNote = (note) => {
     // Lógica para agregar una nota a la base de datos en Firebase
     fetch('https://desafio14-notas-default-rtdb.firebaseio.com/notas.json', {
@@ -36,8 +39,10 @@ const App = () => {
       .then((data) => {
         // Agregar la nota a la lista local
         setNotes([...notes, { id: data.name, ...note }]);
+      })
+      .catch((error) => {
+        console.error('Error al agregar la nota:', error);
       });
-    // Después de agregarla, puedes actualizar el estado local con setNotes([...notes, newNote])
   };
 
   const editNote = (editedNote) => {
@@ -57,8 +62,10 @@ const App = () => {
         );
         setNotes(updatedNotes);
         setSelectedNote(null); // Deseleccionar la nota editada
+      })
+      .catch((error) => {
+        console.error('Error al editar la nota:', error);
       });
-    // Después de editarla, puedes actualizar el estado local con setNotes(newNotesArray)
   };
 
   const deleteNote = (id) => {
@@ -71,8 +78,10 @@ const App = () => {
         const updatedNotes = notes.filter((note) => note.id !== id);
         setNotes(updatedNotes);
         setSelectedNote(null); // Deseleccionar la nota eliminada
+      })
+      .catch((error) => {
+        console.error('Error al eliminar la nota:', error);
       });
-    // Después de eliminarla, puedes actualizar el estado local con setNotes(newNotesArray)
   };
 
   const markAsFavorite = (id) => {
@@ -94,8 +103,10 @@ const App = () => {
         note.id === id ? updatedNote : note
       );
       setNotes(updatedNotes);
+    })
+    .catch((error) => {
+      console.error('Error al marcar favorita la nota:', error);
     });
-    // Después de marcarla, puedes actualizar el estado local con setNotes(newNotesArray)
   };
 
   return (
@@ -108,7 +119,7 @@ const App = () => {
         deleteNote={deleteNote}
         markAsFavorite={markAsFavorite}
         setSelectedNote={setSelectedNote}
-        selectedNote={selectedNote} // Pasa selectedNote como prop
+        selectedNote={selectedNote}
       />
     </div>
   );

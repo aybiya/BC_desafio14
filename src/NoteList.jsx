@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NoteForm from './NoteForm'; // Importar NoteForm para la edición de las notas
+import NoteForm from './NoteForm'; // Importar NoteForm para el diseño en edición de las notas
 
 
 const NoteList = ({ notes, editNote, deleteNote, markAsFavorite, selectedNote, setSelectedNote }) => {
@@ -12,6 +12,7 @@ const NoteList = ({ notes, editNote, deleteNote, markAsFavorite, selectedNote, s
     setSelectedNote(note);
   };
 
+  
   const handleSave = (editedNote) => {
     editNote({
       ...editedNote,
@@ -38,11 +39,11 @@ const NoteList = ({ notes, editNote, deleteNote, markAsFavorite, selectedNote, s
               <h3>{note.title}</h3>
               <p>{note.content}</p>
               <article className='list-btns'>
-                <button onClick={() => handleEdit(note)}>Editar</button>
-                <button className='delete-btn' onClick={() => deleteNote(note.id)}>Eliminar</button>
                 <button className='fav-btn' onClick={() => markAsFavorite(note.id)}>
                   {note.favorite ? 'Sacar de favorito' : 'Favorito'}
                 </button>
+                <button onClick={() => handleEdit(note)}>Editar</button>
+                <button className='delete-btn' onClick={() => deleteNote(note.id)}>Eliminar</button>
               </article>
             </section>
           )}
